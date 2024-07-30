@@ -6,7 +6,7 @@ RUN git clone https://github.com/ai/easings.net.git && \
     ([[ "$TAG" = "latest" ]] || git checkout ${TAG}) && \
     rm -rf .git
 
-FROM node as build
+FROM node AS build
 
 WORKDIR /easings.net
 COPY --from=base /git/easings.net .
